@@ -9,9 +9,9 @@
 #
 
 project='Project01'
-fndict  = paste('/home/dataportal/www/data/',project,'/data_uncorrected/',project,'_datadictionary01.csv', sep="")
-fntab   = paste('/home/dataportal/www/data/',project,'/data_uncorrected/',project,'_MRI_DTI_Complete.csv',sep="")
-convout = paste('/home/dataportal/www/data/',project,'/data_uncorrected/',project,'_MRI_DTI_Complete_Filtered.csv',sep="")
+fndict  = paste('/usr/share/nginx/html/data/',project,'/data_uncorrected/',project,'_datadictionary01.csv', sep="")
+fntab   = paste('/usr/share/nginx/html/data/',project,'/data_uncorrected/',project,'_MRI_DTI_Complete.csv',sep="")
+convout = paste('/usr/share/nginx/html/data/',project,'/data_uncorrected/',project,'_MRI_DTI_Complete_Filtered.csv',sep="")
 
 #fndict  = paste('/home/dataportal/www/data/',project,'/data_uncorrected/',project,'_datadictionary02.csv', sep="")
 #fntab   = paste('/home/dataportal/www/data/',project,'/data_uncorrected/',project,'_Behavior.csv',sep="")
@@ -63,3 +63,4 @@ if ( 'Code' %in% colnames(dict) ) {
 
 write.csv(tab, file=convout, row.names=FALSE)
 warnings()
+
