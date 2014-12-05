@@ -1,0 +1,133 @@
+
+.wait, .wait * { cursor: wait !important; 
+  background-image: "/img/loading-gif-animation.gif";
+}
+
+.selected { background-color:#FFFFBB; }
+.wordcloud {
+ border: 1px solid #036;
+ height: 5in;
+ margin: 0.5in auto;
+ padding: 0;
+ page-break-after: always;
+ page-break-inside: avoid;
+ width: 5in;
+} 
+div.ontology_container {
+  background-attachment:initial;
+  background-clip:initial;
+  background-color:#FFFFFF;
+  background-image:initial;
+  background-origin:initial;
+  background-position:initial initial;
+  background-repeat:initial initial;
+  border-bottom-color:#666666;
+  border-bottom-style:solid;
+  border-bottom-width:1px;
+  border-left-color:#666666;
+  border-left-style:solid;
+  border-left-width:1px;
+  border-right-color:#666666;
+  border-right-style:solid;
+  border-right-width:1px;
+  border-top-color:#666666;
+  border-top-style:solid;
+  border-top-width:1px;
+  cursor:pointer;
+  height:300px;
+  margin-top:5px;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  position:absolute;
+  width:299px;
+  z-index:100;
+}
+#headline {
+  font-family: Gill Sans, Verdana;
+  font-size: 11px;
+  line-height: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+#text {
+  font-family: "Helvetica Neue", "Lucida Grande", Helvetica, Arial, Verdana, sans-serif;
+  font-size: 12px;
+  margin-top: .5em; color: #666;
+}
+#sum {
+  font-family: times, Times New Roman, times-roman, georgia, serif;
+  font-size: 16px;
+  line-height: 19px;
+  color: #444;
+  margin: 0 0 0 0;
+  padding: 0 0 3 0;
+  font-weight: 100;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+#StatSummary {
+  padding: 3;
+  font-family: "Helvetica Neue", "Lucida Grande", Helvetica, Arial, Verdana, sans-serif;
+  font-size: 20px;
+  line-height: 26px;
+  letter-spacing: -1px;
+  color: #fff;
+  border: 2px solid #4572A0;
+  background-color: #4572A7;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+}
+#summary {
+  padding: 3;
+  font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
+  font-size: 12px;
+  letter-spacing: -1px;
+  width: 100%;
+}
+#spacer {
+  height: 5px;
+}
+textarea {
+  font-size: 14px;
+  border:1px solid #999999;
+  font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
+}
+li a {
+  //font-size: 11px;
+}
+ul.ui-autocomplete {
+  overflow-y: scroll;
+  max-height: 400px;
+  list-style: none;
+}
+.ui-progressbar .ui-progressbar-value { 
+   background-image: url(/img/pbar-ani.gif);
+}
+#covariates_system button:not(.active) {
+   background: 50% 50% #AAAAAA;
+   display: inline;
+}
+.ui-accordion .ui-accordion-header a {
+    margin-left: 15px;
+}
+input[type="text"] {
+    box-sizing: border-box;
+}
+.input-block-level {
+  display: block;
+  width: 100%;
+  min-height: 28px;        // Make inputs at least the height of their button counterpart
+  .box-sizing(border-box); // Makes inputs behave like true block-level elements
+}
+#covariates_system .btn-info:active,.btn-primary.active {
+    background-color:#003f92;
+ }
+#ir_container {
+  background-image: url('img/DataExplorationHead.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 80% auto;
+}

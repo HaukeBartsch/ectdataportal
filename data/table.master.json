@@ -1,0 +1,14 @@
+[ 
+  { "name": "MyProject", 
+    "description": "A long description describing my project",
+    "webpage": "http://mmil.ucsd.edu/",
+    "applications": { "DataExploration": { 
+      "yvalue": "cort_area.ctx.total", 
+      "functionOf": "s(agescan)", 
+      "covDev": "false" },
+                      "Main": {
+      "default_subject": "TBO_AG_0015",
+      "default_visit": "20100307"
+   } }
+  }
+]

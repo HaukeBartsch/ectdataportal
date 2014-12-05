@@ -1,0 +1,7 @@
+SubjID,VisitID,Sex,Age,Site,Group
+XXX-001,0001,"M","19","site A","control"
+XXX-002,0002,"F","88","site B","control"
+XXX-003,0003,"F","77","site A","control"
+XXX-004,0001,"F","77","site A","control"
+XXX-005,0001,"F","77","site A","control"
+

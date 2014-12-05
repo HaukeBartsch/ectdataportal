@@ -1,0 +1,8 @@
+[ { "name": "Admin", "rules": [
+      { "name": "Males only", "func": "\"Gender\" = \"M\"" }, 
+      { "name": "Children (M)", "func": "(\"Gender\" = \"M\") and (\"Age\" < 13)" },
+      { "name": "at least 2 visits", "func": "(numVisits()) > 1" },
+      { "name": "only 1 visit", "func": "(numVisits()) = 1" }
+    ] 
+  } 
+]

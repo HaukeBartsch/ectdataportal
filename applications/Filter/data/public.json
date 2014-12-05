@@ -1,0 +1,8 @@
+[ { "name": "Public", "rules": [
+        { "name": "Females only", "func": "\"Gender\" = \"F\"" },
+        { "name": "Ages 5 to 11", "func": "(\"Age\" > 5) and (\"Age\" < 11)" },
+        { "name": "first visit", "func": "(visit()) = 0" },
+        { "name": "last visit", "func": "(visit()) = ((numVisits()) - 1)" }
+    ] 
+  } 
+]

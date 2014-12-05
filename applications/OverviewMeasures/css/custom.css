@@ -1,0 +1,241 @@
+body#mainbody {
+    background-color: #041325; /* override the page background color here */
+}
+
+pre, .code {
+    margin: 5px 0; /* override the default margin for pre, .code elements here */
+    padding: 5px;  /* override the default padding for pre, .code elements here */
+}
+
+
+body {
+  font-family: "Helvetica Neue";
+  margin: 20px auto;
+}
+
+#body {
+  position: relative;
+}
+
+.footer {
+  padding: 2em 0 1em 0;
+  font-size: 12px;
+  margin-top: 20px;
+}
+
+h1 {
+  font-size: 96px;
+  margin-top: .3em;
+  margin-bottom: 0;
+}
+
+h1 + h2 {
+  margin-top: 0;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 28px;
+}
+h1, h2 {
+  font-family: "Yanone Kaffeesatz";
+  text-rendering: optimizeLegibility;
+}
+
+#body > p {
+  line-height: 1.5em;
+  width: 640px;
+  text-rendering: optimizeLegibility;
+}
+#charts {
+  padding: 10px 0;
+}
+
+.chart {
+  display: inline-block;
+  height: 151px;
+  margin-bottom: 20px;
+}
+
+.reset {
+  padding-left: 1em;
+  font-size: smaller;
+  color: #ccc;
+}
+
+.background.bar {
+  fill: #ccc;
+}
+
+.foreground.bar {
+  fill: steelblue;
+}
+.axis path, .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.axis text {
+  font: 10px sans-serif;
+}
+
+.brush rect.extent {
+  fill: steelblue;
+  fill-opacity: .125;
+}
+
+.brush .resize path {
+  fill: #eee;
+  stroke: #666;
+}
+
+#hour-chart {
+  width: 260px;
+}
+
+#delay-chart {
+  width: 230px;
+}
+
+#distance-chart {
+  width: 420px;
+}
+
+#age-chart {
+
+}
+
+#scan-list age {
+  display: table-row;
+}
+
+#scan-list {
+  min-height: 600px;
+}
+#scan-list .age-value,
+#scan-list .origin {
+  margin-bottom: .4em;
+  padding-left: 10px;
+  display: inline-block;
+}
+
+#scan-list .age-value {
+  line-height: 1.5em;
+  background: #eee;
+  width: 640px;
+  margin-bottom: 1px;
+  display: inline;
+}
+
+#scan-list .age-value {
+  color: #999;
+  padding-right: 30px;
+}
+
+#scan-list .age-value div {
+  display: inline-block;
+  width: 100px;
+}
+
+#scan-list div.vol,
+#scan-list div.thick {
+  width: 160px;
+  padding-right: 10px;
+  text-align: right;
+  display: inline-block;
+}
+
+#scan-list .small {
+  color: green;
+}
+
+aside {
+  position: absolute;
+  left: 740px;
+  font-size: smaller;
+  width: 220px;
+}
+
+.scan {
+  background: none repeat scroll 0 0 #EEEEEE;
+}
+
+ul { 
+   padding: 0;
+   margin: 0;	
+   list-style-type: none;
+}
+div.boxplot-container {
+  border: 2px solid #9ecaed;
+  border-radius: 5px;
+  padding-bottom: 30px;
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-right: 20px;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  width: 105px;
+  height: 120px;
+  margin: 6px;
+}
+.glowing-border {
+  outline: none;
+  border-color: #9ecaed;
+  box-shadow: 0 0 10px #9ecaed;
+}
+
+div.boxplot-element {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: thin solid #000000;
+    height: 0;
+    left: 40px;
+    position: absolute;
+    width: 30px;
+    margin-left: 5px;
+    margin-top: 3px;
+}
+div.boxplot-label {
+    border: medium none;
+    position: absolute;
+    margin-left: 2px;
+    font-size: 0.8em;
+}
+h3.rotate {
+    font-size: 0.9em;
+    border-bottom: 1px solid #AAAAAA;   
+}
+input.error {
+    border: 1px solid #e80c4d;
+}
+#ui-id-1 {
+    max-height: 200px;
+    overflow-y: scroll;
+}
+#historyList li a:link {
+    text-decoration:none;
+    color: gray;
+    padding-left: 5px;
+}
+#historyList li {
+    line-height: 24px;
+    border-top: 1px solid rgba(200,200,200,.5);
+}
+#historyList li a:visited {text-decoration:none; color: gray;}
+#historyList li a:hover {text-decoration:none; color: gray;}
+#historyList a:active {text-decoration:none; color: gray;}
+
+#display {
+   display: inline-flex;
+   overflow-x: hidden;
+}
+
+#display button.close {
+   margin-right: -18px;
+   margin-top: -5px;
+}
+
+#SearchField {
+  padding-left: 1px;
+}

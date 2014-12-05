@@ -1,0 +1,9 @@
+[
+  { "name": "Link to PhenX Toolkit",
+    "documentation": "Example definition of a link of a measure to an outside web-page, remove '_master' in the name to activate.",
+    "projects": [ "PING" ],
+    "when": { "search": "^PHX" },
+    "what": { "type": "http",
+              "value": "https://www.phenxtoolkit.org/index.php?pageLink=sqt.searchresult&start=1&word=${column1}&num=10&type=Smart+Search" }
+  }
+]

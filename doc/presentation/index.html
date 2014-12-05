@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Data Portal Documentation</title>
+
+		<meta name="description" content="A framework for data exploration">
+		<meta name="author" content="Hauke Bartsch">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/sky.css" id="theme">
+
+		<!-- For syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- If the query includes 'print-pdf', use the PDF print sheet -->
+		<script>
+			document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+
+		<style>
+                   .reveal section img {
+                      border: 2px solid #888888;
+                   }
+		</style>
+	</head>
+
+	<body>
+
+  <div class="reveal">
+
+    <div class="slides">
+
+      <section>
+        <h1>Data Portal</h1>
+        <h3>A web-based resource for data exploration</h3>
+        <p>
+          <small>created by the <a href="http://mmil.ucsd.edu">Multi-Modal Imaging Laboratory at UC San Diego</a> /<br/> contact: <a href="http://mmil.ucsd.edu">hbartsch@ucsd.edu</a></small>
+        </p>
+      </section>
+
+      <section>
+        <p>
+	  <h1>&nbsp;</h1>
+	  <p>
+            <center>Use Esc to get an overview of the structure of this presentation.</center>
+          </p>
+        </p>
+
+        <aside class="notes">
+          .
+        </aside>
+      </section>
+
+      <section>
+
+        <section>
+	  <p>
+            <h2>Login</h2>
+            <p style="text-align: left;">
+            </p>
+            <p style="text-align: left;">
+	      Use the down arrow to see a walkthrough of the login process.
+            </p>
+          </p>
+        </section>
+
+        <section>
+	  <img src="images/Login.png" alt="Screenshot of login page"/>
+	  <p>
+            The login page allows you to either authenticate yourself or to request a new user account.
+	  </p>
+        </section>
+
+        <section>
+	  <img src="images/Legal.png" alt="Screenshot of main page with legal document"/>
+	  <p>
+            The first time you login you need to agree to the data use agreement. Read the text carefully, scroll down and press "Agree".
+	  </p>
+        </section>
+
+        <section>
+	  <img src="images/LoginDone.png" alt="Screenshot of main page with legal document"/>
+	  <p>
+            You are logged in.
+	  </p>
+        </section>
+
+     </section>
+
+     <section>
+       <p>
+         <h2>What is available?</h2>
+	 <img src="images/Available.png" alt="What is available?"/>
+	 <p style="text-align: left;">
+             Start with getting an overview of the current project.
+         </p>
+       </p>
+     </section>
+
+     <section>
+
+       <section>
+	 <p>
+  	   <h2>Project Overview</h2>
+	   <img src="images/Overview.png" alt="Initial display of Overview page"/>
+  	   <p>
+	     Histograms allow you to judge aspects of study design such as uniformity of the available age range.
+           </p>
+	 </p>
+       </section>
+
+       <section>
+         <img src="images/OverviewDetail.png" alt="Age ranges can be selected"/>
+	 <p>
+	   Select a sub-range in each histogram to filter by categories.
+         </p>
+       </section>
+
+     </section>  
+
+     <section>
+
+       <section>
+	 <h2>Ontology <br/>=<br/>
+	   The sum of all objects
+         </h2><br/>
+         <p>
+	   And a way to group them
+         </p>
+       </section>
+
+       <section>
+	 The ontology application provides access to the data dictionary and a viewer for all available measures.
+         <img src="images/Ontology.png" alt="Ontology with selected sections"/>
+       </section>
+
+       <section>
+         <img src="images/OntologyDetail2.png" alt="data dictionary"/>
+	 <p>
+	   The data dictionary lists all project variables with a short and long description.
+         </p>
+       </section>
+
+       <section>
+         <img src="images/OntologyDetail.png" alt="Ontology editor for rule set"/>
+	 <p>
+	   The hierarchical structure is defined by a set of rules (regular expressions). Use "Edit" to change this structure.
+         </p>
+       </section>
+
+     </section>
+
+     <section>
+
+       <section>
+         <h2>Data Exploration</h2>
+	 <img src="images/Exploration.png" alt="Data Exploration interface"/>
+       </section>
+
+       <section>
+	 <h2>Workflow</h2>
+         <p>
+	   <p style="text-align: left;">
+             Enter variables of interest
+	   </p>
+	   <p style="text-align: left;">
+             &lt;Compute Model&gt;
+	   </p>
+	   <p style="text-align: left;">
+             Inspect scatter plot and statistical summary
+	   </p>
+	   <p style="text-align: left;">
+             Define a new model, keep going
+	   </p>
+         </p>
+       </section>
+
+     </section>
+
+
+    </div>
+
+  </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+
+    <script>
+
+      // Full list of configuration options available here:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+
+        theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+        transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/none
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+          { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>

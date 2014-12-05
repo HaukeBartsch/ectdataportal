@@ -1,0 +1,1 @@
+This application requires a computational backend with a large amount of memory and the emmax package installed. SSH keys need to be installed so that the user gwasproc@<backend> can connect without a password.

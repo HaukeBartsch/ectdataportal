@@ -1,0 +1,72 @@
+body#mainbody {
+    background-color: #041325; /* override the page background color here */
+}
+
+pre, .code {
+    margin: 5px 0; /* override the default margin for pre, .code elements here */
+    padding: 5px;  /* override the default padding for pre, .code elements here */
+}
+
+
+body {
+  font-family: "Helvetica Neue";
+  margin: 20px auto;
+}
+
+#body {
+  position: relative;
+}
+
+footer {
+  padding: 2em 0 1em 0;
+  font-size: 12px;
+}
+
+h1 {
+  font-size: 96px;
+  margin-top: .3em;
+  margin-bottom: 0;
+}
+
+h1 + h2 {
+  margin-top: 0;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 28px;
+}
+h1, h2 {
+  font-family: "Yanone Kaffeesatz";
+  text-rendering: optimizeLegibility;
+}
+
+#body > p {
+  line-height: 1.5em;
+  width: 640px;
+  text-rendering: optimizeLegibility;
+}
+
+.table-row {
+  display: table-row;
+  background-color: #eee;
+}
+body {
+  padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+  overflow-y: scroll;
+}
+.column {
+  width: 150px;
+  display: inline-block;
+  padding-right: 20px;
+  text-align: right;
+}
+.column-s {
+  width: 90px;
+  display: inline-block;
+  padding-right: 20px;
+  text-align: right;
+}
+.add-to-download {
+  line-height: 3pt;
+}

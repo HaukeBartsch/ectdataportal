@@ -1,0 +1,100 @@
+body#mainbody {
+    background-color: #041325; /* override the page background color here */
+}
+
+pre, .code {
+    margin: 5px 0; /* override the default margin for pre, .code elements here */
+    padding: 5px;  /* override the default padding for pre, .code elements here */
+}
+
+#span {
+#   float: left;
+#   width: 120px; 
+#   align: center;
+#}
+span.unknown {
+    background-color: white;
+    text-align: center;
+}
+span.bad {
+    background-color: LightSalmon;
+    text-align: center;
+}
+span.good {
+    background-color: LightGreen;
+    text-align: center;
+}
+li.list-entry-li {
+  display: inline-table;
+  width: 300px;
+  height: 150px;
+  margin: 2px;
+  padding: 5px;
+  text-align: left;
+  border: 1px solid gray;
+  font-size: 1.1em;
+}
+div.list-entry-li-flow {
+  overflow-y: scroll;
+  height: 130px;
+}
+div.list-entry-description {
+  color: lightgray;
+}
+div.list-entry-date {
+ float: left;
+}
+div.list-entry-footer {
+ bottom: 5px;
+ width: 90%;
+ position: absolute;
+ right: 10px;
+ padding-right: 5px;
+ padding-left: 5px;
+ background-color: #888888;
+}
+div.list-entry-version {
+ float: right;
+}
+h3.list-entry-name {
+  position: relative;
+  top: 1px;
+  font-size: 0.9em;
+  line-height: 1.1em;
+}
+div.wrapper {
+  width: 90%;
+  margin-left:auto;
+  margin-right:auto;
+}
+#accordion {
+  height: 800px;
+}
+label.list-entry-author-label {
+}
+span.list-entry-author {
+}
+span.list-entry-requested-by-label {
+}
+span.list-entry-requested-by {
+}
+div.list-entry-keywords {
+}
+h3.header-something {
+  padding-top: 8px;
+  padding-left: 25px;
+  padding-bottom: 8px;
+  font-size: 18px;
+}
+small {
+  font-size: 0.6em;
+}
+
+.ui-state-default {
+  background: #888888;
+}
+.ui-state-default h3 {
+  font-size: 18px;
+  line-height: 1.3em;
+  padding: 0.2em 0;
+}

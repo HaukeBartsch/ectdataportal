@@ -1,0 +1,5 @@
+root,/(H_tiitle1|H_tiitle2|H_tiitle3)/,"Project01"
+H_tiitle1,/Site/i,"all known entries"
+H_tiitle2,/(Site|Age)/i,"all other entries"
+H_tiitle3,/H_tiitle4/,"sub-set"
+H_tiitle4,/.*/,"everything"
