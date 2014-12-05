@@ -330,14 +330,14 @@
 		<li class="dropdown">
 		  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Installed Components <b class="caret"></b></a>
 		  <ul class="dropdown-menu">
-		    <li><a href="/applications/DataExploration/" title="single time point">Data Exploration</a></li>
-		    <li><a href="/applications/Overview/">Overview</a></li>
-		    <li><a href="/applications/OverviewMeasures/">Overview (Measures)</a></li>
-		    <li><a href="/applications/Documents/">Downloads</a></li>
+		    <li><a href="/applications/DataExploration/index.php" title="single time point">Data Exploration</a></li>
+		    <li><a href="/applications/Overview/index.php">Overview</a></li>
+		    <li><a href="/applications/OverviewMeasures/index.php">Overview (Measures)</a></li>
+		    <li><a href="/applications/Documents/index.php">Downloads</a></li>
 <?php if ($can_qc) : ?>
-		    <li><a href="/applications/QC/">Quality Control</a></li>
+		    <li><a href="/applications/QC/index.php">Quality Control</a></li>
 <?php endif; ?>
-		    <li><a href="/applications/TableView/">Table Viewer</a></li>
+		    <li><a href="/applications/TableView/index.php">Table Viewer</a></li>
 		    <li><a href="/applications/Ontology/hierarchy.php?entry=display">Ontology Viewer</a></li>
 		    <li><a href="/applications/SNPs/index.php">SNP browser</a></li>
 		    <li><a class="link-to-image-viewer" href="/applications/ImageViewerMPR/index.php?patient=&project=&visit=">Image Viewer</a></li>
@@ -345,9 +345,9 @@
 <?php if ($admin) : ?>
 		    <li class="divider"></li>
 		    <li class="nav-header">Setup</li>
-		    <li><a href="/applications/DataAdmin/">data administration</a></li>
+		    <li><a href="/applications/DataAdmin/index.php">data administration</a></li>
 		    <li><a href="/applications/User/admin.php">user administration</a></li>
-		    <li><a href="/applications/Dashboard/">Dashboard</a></li>
+		    <li><a href="/applications/Dashboard/index.php">Dashboard</a></li>
 <?php endif; ?>
 		  </ul>
 		</li>
