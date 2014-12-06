@@ -45,7 +45,7 @@ if (!exists("default.values"))
 
 ################################################################
 # data directories
-ddir    <- paste("/home/dataportal/www/data/", project_name, "/data_uncorrected", version, sep="")
+ddir    <- paste("/usr/share/nginx/html/data/", project_name, "/data_uncorrected", version, sep="")
 udir    <- "/usr/share/nginx/html/applications/DataExploration/user_code"
 vdir    <- "/usr/share/nginx/html/applications/DataExploration/user_data"
 mainDir <- "/usr/share/nginx/html/applications/DataExploration/"
