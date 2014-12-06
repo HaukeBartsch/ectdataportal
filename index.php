@@ -497,7 +497,7 @@
         <div class="span4">
           <img class="img-circle" data-src="holder.js/140x140">
           <h2><span class="current-project"></span> Research</h2>
-          <p class="lead">Researcher using PING data</p>
+          <p class="lead">Researchers using <span class="current-project"></span> data</p>
           <p><a class="btn" href="/applications/User/projects.php">Go there &raquo;</a></p>
         </div><!-- /.span4 -->
       </div>
