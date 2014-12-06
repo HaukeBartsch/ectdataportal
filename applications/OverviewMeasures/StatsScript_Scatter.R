@@ -37,9 +37,9 @@ if (!exists("project_name")) {
 
 ################################################################
 # data directories
-ddir    <- paste("/home/dataportal/www/data/", project_name, "/data_uncorrected", version, sep="")
-udir    <- "/home/dataportal/www/applications/DataExploration/user_code"
-mainDir <- "/home/dataportal/www/applications/OverviewMeasures/"
+ddir    <- paste("/usr/share/nginx/html/data/", project_name, "/data_uncorrected", version, sep="")
+udir    <- "/usr/share/nginx/html/applications/DataExploration/user_code"
+mainDir <- "/usr/share/nginx/html/applications/OverviewMeasures/"
 
 datafile5 <- paste(udir, paste("usercache_", project_name, "_", user_name, version, ".RData", sep=""), sep="/")
 
