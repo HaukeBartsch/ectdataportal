@@ -46,10 +46,10 @@ if (!exists("default.values"))
 ################################################################
 # data directories
 ddir    <- paste("/home/dataportal/www/data/", project_name, "/data_uncorrected", version, sep="")
-udir    <- "/home/dataportal/www/applications/DataExploration/user_code"
-vdir    <- "/home/dataportal/www/applications/DataExploration/user_data"
-mainDir <- "/home/dataportal/www/applications/DataExploration/"
-surfDir <- "/home/dataportal/www/applications/SurfaceViewer/"
+udir    <- "/usr/share/nginx/html/applications/DataExploration/user_code"
+vdir    <- "/usr/share/nginx/html/applications/DataExploration/user_data"
+mainDir <- "/usr/share/nginx/html/applications/DataExploration/"
+surfDir <- "/usr/share/nginx/html/applications/SurfaceViewer/"
 ##
 
 # Test if the modification times of the input files are younger than the modification times of the 
