@@ -442,20 +442,20 @@
 	  <img class="img-circle" data-src="holder.js/140x140">
 	  <h2>Overview</h2>
 	  <p class="lead">Key variables of the <span class="current-project"></span> project</p>
-	  <p><a class="btn" href="/applications/Overview" title="Show key variable of the study as linked histograms.">Study &raquo;</a>&nbsp;
-	     <a class="btn" href="/applications/OverviewMeasures" title="Display summary statistics for single measurements.">Measurements &raquo;</a></p>
+	  <p><a class="btn" href="/applications/Overview/index.php" title="Show key variable of the study as linked histograms.">Study &raquo;</a>&nbsp;
+	     <a class="btn" href="/applications/OverviewMeasures/index.php" title="Display summary statistics for single measurements.">Measurements &raquo;</a></p>
 	</div><!-- /.span4 -->
 	<div class="span4">
 	  <img class="img-circle" data-src="holder.js/140x140">
 	  <h2>Data Exploration</h2>
 	  <p class="lead">Define your hypothesis and explore</p>
-	  <p><a class="btn" href="/applications/DataExploration" title="Generalized additive model with integrated smoothness estimation.">Go there &raquo;</a></p>
+	  <p><a class="btn" href="/applications/DataExploration/index.php" title="Generalized additive model with integrated smoothness estimation.">Go there &raquo;</a></p>
 	</div><!-- /.span4 -->
 	<div class="span4">
 	  <img class="img-circle" data-src="holder.js/140x140">
 	  <h2>Documents</h2>
 	  <p class="lead">Downloads and data sharing</p>
-	  <p><a class="btn" href="/applications/Documents">Go there &raquo;</a></p>
+	  <p><a class="btn" href="/applications/Documents/index.php">Go there &raquo;</a></p>
 	</div><!-- /.span4 -->
       </div><!-- /.row -->
       <div class="row">
@@ -463,7 +463,7 @@
 	  <img class="img-circle" data-src="holder.js/140x140">
 	  <h2>Table View</h2>
 	  <p class="lead">Study level imaging data</p>
-	  <p><a class="btn" href="/applications/TableView">Go there &raquo;</a></p>
+	  <p><a class="btn" href="/applications/TableView/index.php">Go there &raquo;</a></p>
 	</div><!-- /.span4 -->
 	<div class="span4">
 	  <img class="img-circle" data-src="holder.js/140x140">
@@ -484,14 +484,14 @@
 	  <img class="img-circle" data-src="holder.js/140x140">
 	  <h2>Image Viewer</h2>
 	  <p class="lead">Display registered image data</p>
-	  <p><a class="btn link-to-image-viewer" href="/applications/ImageViewerMPR">Go there &raquo;</a></p>
+	  <p><a class="btn link-to-image-viewer" href="/applications/ImageViewerMPR/index.php">Go there &raquo;</a></p>
 	</div><!-- /.span4 -->
 <?php if ($can_qc) : ?>
 	<div class="span4">
 	  <img class="img-circle" data-src="holder.js/140x140">
 	  <h2>Quality Control</h2>
 	  <p class="lead">Remove bad sessions</p>
-	  <p><a class="btn" href="/applications/QC">Go there &raquo;</a></p>
+	  <p><a class="btn" href="/applications/QC/index.php">Go there &raquo;</a></p>
 	</div><!-- /.span4 -->
 <?php endif; ?>
         <div class="span4">
