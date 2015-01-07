@@ -111,6 +111,11 @@ if (reCreateCache == 1) {
   # merge the four tables
   # (user data needs a SubjID column)
   if (exists("cog.data")) {
+    # create dv values for all MRI_DTI_Complet variables that are not SubjID or VisitID
+    ignoreThese <- c("SubjID","VisitID")
+    vars <- names(dev.data)
+    vars <- vars[!(vars %in% ignoreThese)]
+
     byx = c("SubjID")
     # merge longitudinal data using subject-id and visit-id
     if ( !is.na(match("VisitID", names(dev.data))) & !is.na(match("VisitID", names(cog.data))) ) { 
@@ -123,6 +128,25 @@ if (reCreateCache == 1) {
     # this can be done like this:
     # data <- merge(dev.data, cog.data[,c("SubjID","VisitID",setdiff(colnames(cog.data),colnames(dev.data)))], by.x=c("SubjID","VisitID"), by.y=c("SubjID","VisitID"), all.x=T,all.y=T)
     data<-merge(dev.data, cog.data, by.x=byx, by.y=byx, all.x=F, all.y=T)
+
+    # now add for all vars a dv_<vars>_<visitnumber> entry with the difference
+    for (n in 1:length(vars)) {
+       v <- vars[n]
+       dv <- paste('dv_',v,sep="")
+       for (i in 1:dim(data)[1]) {
+          subjid = data$SubjID[i]
+          visitnumber = data$VisitNumber[i]
+          if (visitnumber == 1)
+             next
+          d <- data[data$SubjID == subjid & data$VisitNumber == 1,]
+          dvv <- paste(dv,visitnumber,sep='_')
+          if ( !dvv %in% names(data) ) {
+            data[[dvv]] <- NaN
+          }
+          data[[dvv]][i] = data[[v]][i] - d[[v]]
+       }
+    }
+
   } else {
     if (exists("dev.data")) {
       data<-dev.data  
