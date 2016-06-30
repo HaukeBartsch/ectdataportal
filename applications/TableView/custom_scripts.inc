@@ -1,4 +1,18 @@
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js"></script>
+<script type="text/javascript">
+   // this re-defines the "$" operator, use jQuery() instead as $() is used by prototype
+   jQuery.noConflict();
+</script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+<link href="/css/bootstrap-responsive.css" rel="stylesheet">
+<link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/start/jquery-ui.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.5.7/jquery.fileupload.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.5.7/jquery.fileupload-jquery-ui.js"></script>
+
 <?php
+header("Access-Control-Allow-Origin: *");
 /*----------------------------------------------------------------------------------------------------------------------*/
 // URL Parameters to populate variables
 /*----------------------------------------------------------------------------------------------------------------------*/
@@ -47,9 +61,8 @@ if (isset($_SERVER['QUERY_STRING'])) { // populate variables with supplied URL p
        $version = "";
     }
 }
+
 ?>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
 
 <?php
 // copy values into JavaScript variables, access values using window.<variable name>
@@ -111,6 +124,46 @@ echo '</script>';
   }
 
   $(document).ready(function() {
+
+
+    jQuery('tbody').on('click', '.myupload', function() {
+    	jQuery('#files').children().remove();
+    	var progress=0;
+    	// need to check how fileupload can be cleared
+    	$("#fileupload").find(".files").empty();
+    	var sid=jQuery(this).attr('subj_id');
+    	var vid=jQuery(this).attr('visit_id');
+    	var pid= project_name;
+    	//var pid=jQuery(this).attr('project_name');
+       var filep ='/data/'+pid+'/raw/'+sid+'/'+vid+'/';
+
+    var url = 'server/php/index.php';
+    $('#fileupload').fileupload({
+        url: url,
+        dataType: 'json',
+        formData: {fuPath: filep},
+        done: function (e, data) {
+            $.each(data.files, function (index, file) {
+                $('<p/>').text(file.name).appendTo('#files');
+            });
+            setTimeout(function() {
+        $('#progress .progress-bar').css('width',0);
+    		}, 1500);
+        },
+        progressall: function (e, data) {
+            var progress = parseInt(data.loaded / data.total * 100, 10);
+            $('#progress .progress-bar').css(
+                'width',
+                progress + '%'
+            );
+        }
+    }).prop('disabled', !$.support.fileInput)
+      .parent().addClass($.support.fileInput ? undefined : 'disabled');
+
+
+      jQuery('#file-upload-modal').modal('show');
+        });
+
          jQuery('.project_name').text(project_name);
          jQuery('#rowcount').text('wait while loading data...');
     // read in the data table and create all table entries
@@ -273,57 +326,38 @@ echo '</script>';
 			    headerrow.appendChild(group);
 			}
 
-			var group = document.createElement("td");
-			var lin = document.createElement("canvas");
-                        lin.setAttribute('id', 'canvas-'+SubjID+VisitID);
-                        lin.setAttribute('contentEditable', 'true');
-                        lin.setAttribute('width', '64');
-                        lin.setAttribute('height', '64');
-			// lin.setAttribute('href', '//mmil-dataportal.ucsd.edu/ImageViewer/?patient=' + VisitID + '&visit=' + StudyDate);
-			group.appendChild(lin);
-			headerrow.appendChild(group);
-                        mpr1 = new mpr(0);
-                        mpr1.setCacheSize( 0 ); // speed up display by caching 1 image only
-                        mpr1.bindWindow('#canvas-'+SubjID+VisitID,[0,0,1]);
-			if (StudyDate.indexOf("/") > -1) {
-  			  studyDateNormalized = pad(StudyDate.split("/")[2],4) + pad(StudyDate.split("/")[0],2) + pad(StudyDate.split("/")[1],2);
-                        } else {
-                          studyDateNormalized = StudyDate.trim();
-                        }
-                        mpr1.setDataPath('/data/'+project_name+'/' + project_name + '_webcache/' + VisitID.replace('_','').replace('_','') + '/' + studyDateNormalized + '/JPEG/MPR');
-                        mpr1.infoOverlayEnabled = false;
-                        mpr1.crosshairEnabled = false;
-
-			var group = document.createElement("td");
-			var lin = document.createElement("canvas");
-                        lin.setAttribute('id', 'canvas2-'+SubjID+VisitID);
-                        lin.setAttribute('contentEditable', 'true');
-                        lin.setAttribute('width', '64');
-                        lin.setAttribute('height', '64');
-			group.appendChild(lin);
-			headerrow.appendChild(group);
-                        mpr2 = new mpr(0);
-                        mpr2.setCacheSize( 0 ); // speed up display by caching 1 image only
-                        mpr2.bindWindow('#canvas2-'+SubjID+VisitID,[0,0,1]);
-                        mpr2.setDataPath('/data/'+project_name+'/' + project_name + '_webcache/' + VisitID.replace('_','').replace('_','') + '/' + studyDateNormalized + '/JPEG/FA');
-                        mpr2.infoOverlayEnabled = false;
-                        mpr2.crosshairEnabled = false;
+			
 
 			var group = document.createElement("td");
 			var lin = document.createElement("a");
-			lin.setAttribute('href', '/applications/ImageViewerMPR/?patient=' + SubjID + '&visit=' + VisitID + '&project=' + project_name);
+			var out = document.createElement('div');
+			lin.setAttribute('href', '/applications/PapayaViewer/?patient=' + SubjID + '&visit=' + VisitID + '&project=' + project_name);
             var text = document.createTextNode('Images');
+            var button= document.createElement('button');
+            var text1= document.createTextNode('File Upload');
+            button.setAttribute('class','btn btn-default myupload');
+            button.setAttribute('subj_id',SubjID);
+            button.setAttribute('visit_id',VisitID);
+            button.appendChild(text1);
+
+
 			lin.appendChild(text);
+			out.appendChild(button);
+
+			
+			
 			group.appendChild(lin);
+			group.appendChild(out);
 			headerrow.appendChild(group);
 
 			var group = document.createElement("td");
-			var lin = document.createElement("a");
+			var lin = document.createElement("input");
 			lin.setAttribute('href', '/applications/SurfaceViewerSS/?project_name='+ project_name +'&subjid=' + SubjID + '&visitid=' + VisitID);
             var text = document.createTextNode('Surfaces');
 			lin.appendChild(text);
 			group.appendChild(lin);
 			headerrow.appendChild(group);
+    
 
 /*			var group = document.createElement("td");
 			var lin = document.createElement("a");

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 
+
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -10,13 +11,33 @@
 
     <!-- Le styles -->
     <link href="/css/bootstrap.css" rel="stylesheet">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js"></script>
+
+    <script type="text/javascript">
+           // this re-defines the "$" operator, use jQuery() instead as $() is used by prototype
+           jQuery.noConflict();
+        </script>
+    <link rel="stylesheet" href="css/jquery.fileupload.css">
     <style>
+       .progress-bar-success { 
+            
+            height: 18px; 
+            background: green; 
+            width: 0%;
+            top: 50%;
+        }
       body {
         padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
       }
     </style>
     <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/jquery.fileupload.css">
     <link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/start/jquery-ui.css" rel="stylesheet" type="text/css"/>
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.5.7/jquery.fileupload.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.5.7/jquery.fileupload-jquery-ui.js"></script>
+    <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/9.5.7/jquery.iframe-transport.js"></script>
 
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -31,19 +52,19 @@
                                    <link rel="shortcut icon" href="/img/favicon.png">
 
  <?php 
+  #
+  #
    session_start(); /// initialize session
-
    include("../../code/php/AC.php");
    $user_name = check_logged(); /// function checks if visitor is logged.
-
-   if (isset($_SESSION['project_name']))
-      $project_name = $_SESSION['project_name'];
-   else
+   if (isset($_SESSION['project_name'])){
+      $project_name = $_SESSION['project_name']; 
+   } else {
       $project_name = "Project01";
-
+   }
    echo('<script type="text/javascript"> user_name = "'.$user_name.'"; project_name = "'.$project_name.'"; </script>');
-
 ?>
+
 
     <?php include_once ($_SERVER['DOCUMENT_ROOT'] . '/applications/TableView/custom_scripts.inc') ?>
     <?php include_once ($_SERVER['DOCUMENT_ROOT'] . '/applications/TableView/custom_styles.inc') ?>
@@ -80,7 +101,40 @@
       <table id='TABLE1'><thead id='table1-thead-id'></thead><tbody id='table1-tbody-id'></tbody></table>
       Quick Find: <input type="text" id="quickfind"/><br>
 
-    </div> <!-- /container -->
+    </div> 
+<div class="modal fade" tabindex="-1" role="dialog" id="file-upload-modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Data Upload</h4>
+      </div>
+      <div class="modal-body">
+        <span class="btn btn-success fileinput-button">
+          <i class="glyphicon glyphicon-plus"></i>
+          <span>Select files...</span>
+          <!-- The file input field used as target for the file upload widget -->
+          <input id="fileupload" type="file" name="files[]" multiple>
+        </span> 
+        <br>
+
+        <br>
+      
+      <div id="progress" class="progress">
+        <div class="progress-bar progress-bar-success"></div>
+    </div>
+      </div>
+      <div id="files" class="files" style="height: 100px; overflow-y: scroll;"></div>
+      <br>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div> <!-- /.modal-header-->
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
+    
+    <!-- /container -->
     
     <!-- Le javascript
     ================================================== -->
